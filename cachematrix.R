@@ -2,8 +2,7 @@
 ## functions do
 
 ## Write a short comment describing this function
-##`makeCacheMatrix`: This function creates a special "matrix" object 
-##that can cache its inverse.
+##This function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function( m = matrix() ) {
   
@@ -23,24 +22,26 @@ makeCacheMatrix <- function( m = matrix() ) {
   }
   
   ## set the inverse of the matrix
-  setInverse <- function(inverse) {
+  setinverse <- function(inverse) {
     i <<- inverse
   }
   
   ## get the inverse of the matrix
-  getInverse <- function() {
-    ## Return the inverse property
+  getinverse <- function() {
+    ## return the inverse
     i
   }
   
   ## return a list of the methods
   list(set = set, get = get,
-       setInverse = setInverse,
-       getInverse = getInverse)
+       setinverse = setinverse,
+       getinverse = getinverse)
 }
 
 
 ## Write a short comment describing this function
+##This function computes the inverse of the special 
+##"matrix" returned by `makeCacheMatrix` above.
 
 cacheSolve <- function(x, ...) {
         ## matrix of the inverse of 'x'
@@ -59,7 +60,7 @@ cacheSolve <- function(x, ...) {
   m <- solve(data) %*% data
   
   ## set the inverse to the object
-  x$setInverse(m)
+  x$setinverse(m)
   
   ## return the matrix
   m
